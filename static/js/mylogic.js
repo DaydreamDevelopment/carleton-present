@@ -1,5 +1,11 @@
 function my_init() {
   easyrtc.setRoomOccupantListener(loggedInListener);
+  console.log("before prompt");
+  var key = prompt("Please enter the api key", "");
+  console.log("The key is: " + key);
+  easyrtc.setCredential({
+    "apikey": key
+  });
   easyrtc.easyApp("Daydream-Interactive-Present", "self", ["caller"],
     function (myId) {
       console.log("My easyrtcid is " + myId);

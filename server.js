@@ -71,6 +71,16 @@ easyrtc.on("getIceConfig", function (connectionObj, callback) {
     });
 });
 
+var onAuthenticate = function (socket, easyrtcid, appName, username, credential, easyrtcAuthMessage, next) {
+  if (credential.apikey === 'TIMG5103bgcppm') {
+    next(new easyrtc.util.ConnectionError("Failed our private auth."));
+  } else {
+    next(null);
+  }
+};
+
+easyrtc.events.on("authenticate", onAuthenticate);
+
 
 // Start EasyRTC server
 var rtc = easyrtc.listen(httpApp, socketServer, null, function (err, rtcRef) {
