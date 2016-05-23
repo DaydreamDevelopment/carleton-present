@@ -1,8 +1,8 @@
 function my_init() {
   easyrtc.setRoomOccupantListener(loggedInListener);
-  console.log("before prompt");
-  var key = prompt("Please enter the api key", "");
-  console.log("The key is: " + key);
+  var username = prompt("Please enter a username", "");
+  easyrtc.setUsername(username);
+  var key = prompt("Please enter the API key", "");
   easyrtc.setCredential({
     "apikey": key
   });
