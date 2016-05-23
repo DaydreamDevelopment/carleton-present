@@ -4,6 +4,7 @@ function my_init() {
   easyrtc.setCredential({
     "apikey": key
   });
+  easyrtc.setVideoDims(720, 1280);
   easyrtc.easyApp("Daydream-Interactive-Present", "self", ["caller"],
     function (myId) {
       console.log("My easyrtcid is " + myId);
