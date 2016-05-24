@@ -9,11 +9,16 @@
 </head>
 
 <body onload="my_init()">
-    <div id="otherClients"> </div>
-    <video style="float:left" id="self" width="180" height="320"></video>
-    <div style="position:relative;float:left;width:720px">
-        <video id="caller" width="720" height="1280"></video>
+    <div style="position:relative; width:1080px; height:1920px;">
+        <video style="position:absolute; width:100%; top:0; left:0;" id="caller" width="100%"></video>
+        <video style="position:absolute; bottom:0; right:0; z-index=10;" id="self" width="25%"></video>
+        <img style="position:absolute; bottom:50px; left:50px; z-index=10;" id="watermark" src="assets/logo.png"></img>
+        <div style="position:absolute; top:0; left:0; z-index=10;" id="otherClients"> </div>
     </div>
+
+
+
+
 
 </body>
 
